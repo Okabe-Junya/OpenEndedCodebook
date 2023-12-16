@@ -1,6 +1,6 @@
-# �wPython�ł͂��߂�I�[�v���G���h�Ȑi���I�A���S���Y���x�T�|�[�g�y�[�W
+# 『Pythonではじめるオープンエンドな進化的アルゴリズム』サポートページ
 
-<!-- 
+<!--
 ```
 brew install graphviz
 conda create -n openevo python=3.8
@@ -13,39 +13,39 @@ and install evogym.
 https://evolutiongym.github.io/tutorials/getting-started.html
 -->
 
-## ���ƃC���X�g�[�����@
+## 環境とインストール方法
 
-�I�[�v���G���h�ȃA���S���Y���������ς݂̃T���v���v���O������p�ӂ��܂����B����
-�T���v���v���O�����ɂ́A�������̎�����p�ӂ��Ă��܂��B�����𓮍삳���Ȃ���A
-�A���S���Y�����w��ł��������܂��B�����ł̓T���v���v���O�����ƁA���̎��s���̃C
-���X�g�[�����@��������܂��B
+オープンエンドなアルゴリズムを実装済みのサンプルプログラムを用意しました。この
+サンプルプログラムには、いくつかの実験を用意しています。それらを動作させながら、
+アルゴリズムを学んでいただけます。ここではサンプルプログラムと、その実行環境のイ
+ンストール方法を説明します。
 
-### Python��Anaconda
+### PythonとAnaconda
 
-�T���v���v���O������Python�Ŏ�������Ă��܂��B�܂��{���Ŏg�p���Ă���Evolution
-Gym 1.0��Python 3.8���T�|�[�g���Ă��܂��B���̂��ߖ{���ł��APython 3.8���g�p����
-���BPython 3.8�̃C���X�g�[�����@�ɂ��Ă͊������܂��B�܂�Anaconda���g�p���܂�
-���AAnaconda�̃C���X�g�[�����@�ɂ��Ă͊������܂��B
+サンプルプログラムはPythonで実装されています。また本書で使用しているEvolution
+Gym 1.0はPython 3.8をサポートしています。そのため本書でも、Python 3.8を使用しま
+す。Python 3.8のインストール方法については割愛します。またAnacondaを使用します
+が、Anacondaのインストール方法については割愛します。
 
- - Python�Fhttps://www.python.org/downloads/
- - Anaconda�Fhttps://docs.anaconda.com/
+ - Python：https://www.python.org/downloads/
+ - Anaconda：https://docs.anaconda.com/
 
 ### Evolution Gym
 
-�T���v���v���O�����ł�Evolution Gym���g���܂��BEvolution Gym�̓V�~�����[�V��
-���̌��ʂ�\�����邽�߂�OpenGL���g�p���A�C���X�g�[�����ɃV�~�����[�^���r���h��
-�܂��B�r���h�ɂ͒ǉ��̃��C�u�������K�v�ɂȂ�܂��B
+サンプルプログラムではEvolution Gymを使います。Evolution Gymはシミュレーショ
+ンの結果を表示するためにOpenGLを使用し、インストール時にシミュレータをビルドし
+ます。ビルドには追加のライブラリが必要になります。
 
 #### Windows
 
-Windows�ł͎��O��Git��Visual Studio���C���X�g�[������K�v������܂��B�ˑ���
-�C�u�������C���X�g�[������ɂ� `winget` �R�}���h��p���܂��B
+Windowsでは事前にGitとVisual Studioをインストールする必要があります。依存ラ
+イブラリをインストールするには `winget` コマンドを用います。
 
 ```
 $ winget install cmake
 ```
 
-���̌�A`conda` �R�}���h��Evolution Gym���C���X�g�[�����܂��B
+その後、`conda` コマンドでEvolution Gymをインストールします。
 
 ```
 $ git clone --recurse-submodules https://github.com/EvolutionGym/evogym.git
@@ -53,16 +53,16 @@ $ cd evogym
 $ conda env create -f environment.yml
 ```
 
-#### GNU/Linux�i��Ƃ���Ubuntu�j
+#### GNU/Linux（例としてUbuntu）
 
-GNU/Linux�̗�Ƃ���Ubuntu�ł̊��̍\�z���@��������܂��BUbuntu�ł�apt�R
-�}���h��p���Ĉˑ����C�u�������C���X�g�[�����܂��B
+GNU/Linuxの例としてUbuntuでの環境の構築方法を説明します。Ubuntuではaptコ
+マンドを用いて依存ライブラリをインストールします。
 
 ```
 $ apt install cmake glfw
 ```
 
-���̌�A`conda` �R�}���h��Evolution Gym���C���X�g�[�����܂��B
+その後、`conda` コマンドでEvolution Gymをインストールします。
 
 ```
 $ git clone --recurse-submodules https://github.com/EvolutionGym/evogym.git
@@ -72,18 +72,52 @@ $ conda env create -f environment.yml
 
 #### macOS
 
-macOS�̗�Ƃ���Homebrew���g�������̍\�z���@��������܂��B
+macOSの例としてHomebrewを使った環境の構築方法を説明します。
 
 ```
 $ brew install cmake glfw
 ```
 
-���̌�A `conda` �R�}���h��Evolution Gym���C���X�g�[�����܂��B
+その後、 `conda` コマンドでEvolution Gymをインストールします。
 ```
 $ git clone --recurse-submodules https://github.com/EvolutionGym/evogym.git
 $ cd evogym
 $ conda env create -f environment.yml
 ```
 
-|*����*�F<br>Evolution Gym�̃C���X�g�[���̍ہA�v���b�g�t�H�[���ɂ���Ă̓G���[���o�邱�Ƃ�����܂��B���̍ۂ́A�������URL�����g�����������B<br>https://github.com/oreilly-japan/evogym|
+### サンプルプログラム
+
+サンプルプログラムの実行環境を構築します。
+
+1. サンプルプログラムのソースコードを取得する
+
+   Github上にあるサンプルプログラムのソースコードを取得します。
+
+   ```
+   git clone https://github.com/oreilly-japan/OpenEndedCodebook.git
+   ```
+
+2. 作業ディレクトリをリポジトリルートに移動する
+
+   ソースコードを取得できたら、作業ディレクトリをリポジトリルートに移動します。
+
+   ```
+   cd OpenEndedCodebook
+   ```
+
+3. 依存パッケージをインストールします。
+
+   ```
+   pip install -r requirement.txt
+   ```
+
+   本書で使用する依存パッケージの中に、以前のバージョンのライブラリを期待しているものがあります。ただしパッケージの状態により、依存パッケージの依存パッケージがインストールできない状態になっています。そのため `--no-deps` を指定してインストールします。
+
+   ```
+   pip install --no-deps -r requirements-extra.txt
+   ```
+
+これで環境構築は終わりです。
+
+|*注意*：<br>Evolution Gymのインストールの際、プラットフォームによってはエラーが出ることがあります。その際は、こちらのURLをお使いください。<br>https://github.com/oreilly-japan/evogym|
 |:-|
